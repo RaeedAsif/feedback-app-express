@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "f0e4e3d9-e6ba-47f1-b5f7-9d3f598ad8bc",
+		"name": "Feedback-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"johndoe@example.com\",\n    \"password\": \"JohnDoe12@\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"John\",\n    \"last_name\": \"John\",\n    \"email\": \"johndoe@example.com\",\n    \"password\": \"JohnDoe12@\",\n    \"confirm_password\": \"JohnDoe12@\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Feedback",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgwMjc0NjY3LCJleHAiOjE2ODAyNzU1Njd9.UhNuUyNejsbVT7fWXrVlnn5HZsfMX5_-DKf3m2GcVTU",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"review\",\n    \"feedback\": \"Lorem Ispomum\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/feedback",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Feedbacks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgwMjc0NjY3LCJleHAiOjE2ODAyNzU1Njd9.UhNuUyNejsbVT7fWXrVlnn5HZsfMX5_-DKf3m2GcVTU",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/feedbacks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feedbacks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Current User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgwMjY3MzI2LCJleHAiOjE2ODAzNTM3MjZ9.TdEw3-fMicU_iCAQsrzuuJFxTK9uVphNxdSUc9cWek8",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
